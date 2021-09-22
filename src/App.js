@@ -1,24 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
+import './styles/App.css';
+import { Input, Num } from "./components/index.js"
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <h1 className="app_title">Calculator</h1>
+      <div className="app_content">
+        <Input />
+        <div className="app_buttonWrapper">
+          <div className="app_buttonInner app_buttonInner-num">
+            {[...Array(10)].map((_, i) => (
+              <Num key={i} num={9-i} />
+            ))}
+          </div>
+          <div className="app_buttonInner app_buttonInner-operator">
+            {["÷", "×", "+", "-", "=", "AC"].map((symbol, i) => (
+              <Num key={i} num={symbol} />
+            ))}
+          </div>
+        </div>
+      </div>
+    </>
   );
 }
 

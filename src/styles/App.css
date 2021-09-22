@@ -1,0 +1,53 @@
+/* App */
+.app_title {
+  font-size: 2rem;
+  padding: 1rem;
+  text-align: center;
+}
+.app_content {
+  height: 100%;
+}
+.app_buttonWrapper {
+  height: 100%;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+  margin: 0 1rem;
+}
+.app_buttonInner {
+  gap: 1rem;
+  text-align: center;
+}
+.app_buttonInner-num {
+  display: grid;
+  grid-column: 1 / 4;
+  grid-template-columns: repeat(3, 1fr);
+}
+.app_buttonInner-operator {
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+/* Input */
+.input {
+  border: 2px solid gray;
+  border-radius: 1rem;
+  display: flex;
+  font-size: 1.5rem;
+  margin: 32px auto;
+  text-align: center;
+  padding: 1rem;
+  width: 80%;
+}
+
+/* Num */
+.num_button {
+  border: 1px solid gray;
+  border-radius: 1rem;
+  font-size: 1.3rem;
+  font-weight: bold;
+  line-height: 2rem;
+}
+.num_button:hover {
+  background: gray;
+}
