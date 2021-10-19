@@ -3,7 +3,7 @@ import { Input, Num } from "./components/index.js"
 import React, {useState} from "react";
 
 function App() {
-  const [inputValue, setInputValue] = useState("") //追加しました
+  const [inputValue, setInputValue] = useState("")
 
   return (
     <>
