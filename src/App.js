@@ -3,24 +3,23 @@ import { Input, Num } from "./components/index.js"
 import React, {useState} from "react";
 
 function App() {
-
-  const [value, setValue] = useState(0) //追加しました
+  const [inputValue, setInputValue] = useState("") //追加しました
 
   return (
     <>
       <h1 className="app_title">Calculator</h1>
       <div className="app_content">
-        <Input index = {value}/>
+        <Input inputValue={inputValue}/>
         <div className="app_buttonWrapper">
           <div className="app_buttonInner app_buttonInner-num">
             {[...Array(10)].map((_, i) => (
-              <Num key={i} num={9-i} setValue = {setValue}/>
+              <Num key={i} num={(9-i).toString()} inputValue={inputValue} setInputValue={setInputValue}/>
             ))}
           </div>
 
           <div className="app_buttonInner app_buttonInner-operator">
             {["÷", "×", "+", "-", "=", "AC"].map((symbol, i) => (
-              <Num key={i} num={symbol} setValue = {setValue}/>
+              <Num key={i} num={symbol} inputValue={inputValue} setInputValue={setInputValue}/>
             ))}
           </div>
         </div>

@@ -1,11 +1,13 @@
 import React, {useState} from "react";
 
-const Input = (value) => {
- 
+const Input = ({inputValue}) => {
+  const handleChange = () => {
+    // console.log(inputValue)
+  }
+
   return (
     <>
-      {/* <input className="input" type="text" value="input" /> */}
-      <input className="input" type="text" value = {value.index} />
+      <input className="input" type="text" value={inputValue} onChange={handleChange} />
     </>
   )
 }
