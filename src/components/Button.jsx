@@ -1,5 +1,4 @@
-const Num = ({num, inputValue, setInputValue}) => {
-
+const Button = ({num, inputValue, setInputValue}) => {
 
   const handleClick = () => {
     let temp;
@@ -60,4 +59,4 @@ const Num = ({num, inputValue, setInputValue}) => {
   )
 }
 
-export default Num;
+export default Button;
