@@ -53,20 +53,18 @@ const Button = ({label, inputValue, setInputValue}) => {
 
     const symbols = [];
     const formula = [];
-    // ÷ × 1 - + descending
     let startNumIdx = 0;
+    const priority = { "÷": 1, "×": 1, "-": 0, "+": 0 }
     if(label === "=") {
       inputValue.split("").forEach((char, idx) => {
         if(char === "+" || char === "-" || char === "×" || char === "÷") {
           formula.push(inputValue.substring(startNumIdx, idx));
           startNumIdx = idx + 1;
           
-          let i=0;
-          while(symbols[i] > char) {
+          while(priority[char] <= priority[symbols[0]] ) {
             formula.push(symbols.shift())
-            i++
           }
-          symbols.push(char)
+          symbols.unshift(char)
         } else if(idx === inputValue.length-1) {
           formula.push(inputValue.slice(startNumIdx));
         }
