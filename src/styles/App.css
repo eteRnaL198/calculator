@@ -40,14 +40,14 @@
   width: 80%;
 }
 
-/* Num */
-.num_button {
+/* Button */
+.button {
   border: 1px solid gray;
   border-radius: 1rem;
   font-size: 1.3rem;
   font-weight: bold;
   line-height: 2rem;
 }
-.num_button:hover {
+.button:hover {
   background: gray;
 }
