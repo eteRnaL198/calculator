@@ -18,7 +18,7 @@ function App() {
           </div>
 
           <div className="app_buttonInner app_buttonInner-operator">
-            {["÷", "×", "+", "-", "=", "AC"].map((symbol, i) => (
+            {["÷", "×", "+", "-", "=", "Delete"].map((symbol, i) => (
               <Button key={i} label={symbol} inputValue={inputValue} setInputValue={setInputValue}/>
             ))}
           </div>
