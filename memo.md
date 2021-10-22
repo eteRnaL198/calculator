@@ -14,7 +14,9 @@ Pull Requests(画面上)
 
 # 数式文字列→逆ポーランド記法 変換アルゴリズム
 https://www.mk-mode.com/blog/2020/11/18/cpp-convert-infix-to-rpn-with-stack/ \\
+
 https://www.kagawa-nct.ac.jp/IT/member/miyatake/calc/\\
+
 数式文字列をトークン分割（配列化）\\
 配列の先頭から順次読み込んで判定（ループ処理）\\
 a. 数値の場合\\

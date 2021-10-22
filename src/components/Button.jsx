@@ -1,54 +1,6 @@
 const Button = ({label, inputValue, setInputValue}) => {
 
   const handleClick = () => {
-    // let temp;
-    // if(label === "+" || label === "-" || label === "×" || label === "÷" ||label === "="){
-    //   temp = inputValue + " " + label + " ";  //記号なら、半角スペースをつける
-    // }else{
-    //   temp = inputValue + label;  
-    // }
-
-    // setInputValue(temp)
-
-    // if(temp.split(" ").length > 3 ){ //スペースで演算子があるかを確認
-
-    //   console.log(temp.split(" "))
-    //   let temp2 = temp.split(" ")
-
-    //   console.log("非演算子1: "+ Number(temp2[0]))
-    //   console.log("非演算子2: "+ Number(temp2[2]))
-    //   console.log("演算子: " + temp2[1] + " と " +label)
-
-    //   let temp3;
-
-    //   temp2.forEach((val, i) => {
-    //     console.log("temp2["+i+"]" + " = " + val)
-    //   })
-
-    //   if(temp2[1] === "+" && temp2[2] !== "") {temp3 = Number(temp2[0]) + Number(temp2[2])} else 
-    //   if(temp2[1] === "-" && temp2[2] !== "") {temp3 = Number(temp2[0]) - Number(temp2[2])} else
-    //   if(temp2[1] === "×" && temp2[2] !== "") {temp3 = Number(temp2[0]) * Number(temp2[2])} else
-    //   if(temp2[1] === "÷" && temp2[2] !== "") {temp3 = Number(temp2[0]) / Number(temp2[2])} else {
-    //     temp3 = Number(temp2[0])
-    //   }
-       
-    //    if(label === "="){
-    //     setInputValue( String(temp3))
-
-    //    }else{
-    //     setInputValue( String(temp3) + " " + label + " ")
-
-    //    }
-
-    // }
-
-    // if(label === "="){
-      //  if(inputValue.split("÷").length === 2) {
-      //    const [a, b] = inputValue.split("÷") 
-      //    setInputValue(parseInt(a, 10) / parseInt(b, 10))
-      //  } 
-    // }
-
     setInputValue(inputValue + label)
 
     const symbols = [];
