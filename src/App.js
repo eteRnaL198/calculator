@@ -13,13 +13,13 @@ function App() {
         <div className="app_buttonWrapper">
           <div className="app_buttonInner app_buttonInner-num">
             {[...Array(10)].map((_, i) => (
-              <Button key={i} num={(9-i).toString()} inputValue={inputValue} setInputValue={setInputValue}/>
+              <Button key={i} label={(9-i).toString()} inputValue={inputValue} setInputValue={setInputValue}/>
             ))}
           </div>
 
           <div className="app_buttonInner app_buttonInner-operator">
             {["÷", "×", "+", "-", "=", "AC"].map((symbol, i) => (
-              <Button key={i} num={symbol} inputValue={inputValue} setInputValue={setInputValue}/>
+              <Button key={i} label={symbol} inputValue={inputValue} setInputValue={setInputValue}/>
             ))}
           </div>
         </div>

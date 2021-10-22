@@ -1,11 +1,11 @@
-const Button = ({num, inputValue, setInputValue}) => {
+const Button = ({label, inputValue, setInputValue}) => {
 
   const handleClick = () => {
     // let temp;
-    // if(num === "+" || num === "-" || num === "×" || num === "÷" ||num === "="){
-    //   temp = inputValue + " " + num + " ";  //記号なら、半角スペースをつける
+    // if(label === "+" || label === "-" || label === "×" || label === "÷" ||label === "="){
+    //   temp = inputValue + " " + label + " ";  //記号なら、半角スペースをつける
     // }else{
-    //   temp = inputValue + num;  
+    //   temp = inputValue + label;  
     // }
 
     // setInputValue(temp)
@@ -17,7 +17,7 @@ const Button = ({num, inputValue, setInputValue}) => {
 
     //   console.log("非演算子1: "+ Number(temp2[0]))
     //   console.log("非演算子2: "+ Number(temp2[2]))
-    //   console.log("演算子: " + temp2[1] + " と " +num)
+    //   console.log("演算子: " + temp2[1] + " と " +label)
 
     //   let temp3;
 
@@ -32,33 +32,56 @@ const Button = ({num, inputValue, setInputValue}) => {
     //     temp3 = Number(temp2[0])
     //   }
        
-    //    if(num === "="){
+    //    if(label === "="){
     //     setInputValue( String(temp3))
 
     //    }else{
-    //     setInputValue( String(temp3) + " " + num + " ")
+    //     setInputValue( String(temp3) + " " + label + " ")
 
     //    }
 
     // }
 
-    // if(num === "="){
+    // if(label === "="){
       //  if(inputValue.split("÷").length === 2) {
       //    const [a, b] = inputValue.split("÷") 
       //    setInputValue(parseInt(a, 10) / parseInt(b, 10))
       //  } 
     // }
 
-    setInputValue(inputValue + num)
+    setInputValue(inputValue + label)
 
-    let stack = [];
-    
+    const symbols = [];
+    const formula = [];
+    // ÷ × 1 - + descending
+    let startNumIdx = 0;
+    if(label === "=") {
+      inputValue.split("").forEach((char, idx) => {
+        if(char === "+" || char === "-" || char === "×" || char === "÷") {
+          formula.push(inputValue.substring(startNumIdx, idx));
+          startNumIdx = idx + 1;
+          
+          let i=0;
+          while(symbols[i] > char) {
+            formula.push(symbols.shift())
+            i++
+          }
+          symbols.push(char)
+        } else if(idx === inputValue.length-1) {
+          formula.push(inputValue.slice(startNumIdx));
+        }
+      })
+      while(symbols.length > 0) {
+        formula.push(symbols.shift())
+      }
+      console.log("formula: ", formula)
+    }
 
   }
 
   return (
     <>
-      <button className="num_button" onClick={handleClick}>{num}</button>
+      <button className="button" onClick={handleClick}>{label}</button>
     </>
   )
 }
