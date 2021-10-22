@@ -75,6 +75,8 @@ const Button = ({label, inputValue, setInputValue}) => {
         formula.push(symbols.shift())
       }
       console.log("formula: ", formula)
+    } else if(label === "AC") {
+      setInputValue("");
     }
 
   }
