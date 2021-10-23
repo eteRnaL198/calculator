@@ -40,7 +40,6 @@ const Button = ({label, inputValue, setInputValue}) => {
         }
       });
 
-      //足し算と引き算を計算
       formula.forEach((e,idx) => {
         let temp = idx-2
         if(e === "+"){
@@ -57,7 +56,6 @@ const Button = ({label, inputValue, setInputValue}) => {
         }
       });  
       setInputValue(formula[formula.length-1])
-      //↑ここまで
 
     } else if(label === "Delete") {
       setInputValue(inputValue.substring(0, inputValue.length-1));
